@@ -1,0 +1,364 @@
+{
+  "snapshot_date": "2026-10-12",
+  "source_project": "/Users/bytedance/code/data-selection",
+  "source_head": "95e9e7e456af4d1bfcd049bd48b1b637fd57d65e",
+  "note": "Working-tree snapshot; file hashes are authoritative, HEAD alone does not imply clean files.",
+  "files": [
+    {
+      "source_path": "docs/experiment_design.md",
+      "path": "references/pcu-select/docs/experiment_design.md",
+      "sha256": "b89e4fc4463061bcf26f00bf141a2d53c99ca1e5096296b03a63f7b3a760f83c"
+    },
+    {
+      "source_path": "docs/motivation_experiment_design.md",
+      "path": "references/pcu-select/docs/motivation_experiment_design.md",
+      "sha256": "e9aa27b186827be1d3bd0dbc338f6ca756cd7bd0d4678e990a318037e3fff059"
+    },
+    {
+      "source_path": "docs/pcu_select_design.md",
+      "path": "references/pcu-select/docs/pcu_select_design.md",
+      "sha256": "3a8fcd2e86aa951e1b0493b368d3f83087417131d9e1f8981df9d160fe4aec77"
+    },
+    {
+      "source_path": "docs/pcu_select_research_plan.md",
+      "path": "references/pcu-select/docs/pcu_select_research_plan.md",
+      "sha256": "5d3a6edad465179144571b84f747145f711d2cce249b205ec38b4bb52dc46d97"
+    },
+    {
+      "source_path": "paper/Sections/03_problem_formulation.tex",
+      "path": "references/pcu-select/paper/Sections/03_problem_formulation.tex",
+      "sha256": "7d5dff54158d195a0fff57af6bdba4fda9193c28c4939a96a7b8885585b0f2fa"
+    },
+    {
+      "source_path": "paper/Sections/04_method.tex",
+      "path": "references/pcu-select/paper/Sections/04_method.tex",
+      "sha256": "89f5ca3e803013b6f0f1b01886a1fd671282b62ba369d3dbc64e4bd81e216029"
+    },
+    {
+      "source_path": "paper/project_context.md",
+      "path": "references/pcu-select/paper/project_context.md",
+      "sha256": "2d452ac325f3c1ae81d6e8f8f38e9021949192b827b72d2c92d6cf29a38b88ab"
+    },
+    {
+      "source_path": "scripts/experiments/README.md",
+      "path": "references/pcu-select/scripts/experiments/README.md",
+      "sha256": "b175ac9cdc274a1643c0fecc03e61b64d0fbcb2df594a841b7c0b8cf9c9a6176"
+    },
+    {
+      "source_path": "scripts/experiments/_common.py",
+      "path": "references/pcu-select/scripts/experiments/_common.py",
+      "sha256": "8048d8bb11cbaa07420058a79158101400250bca6e158cd52f7b4202a902f926"
+    },
+    {
+      "source_path": "scripts/experiments/run_e4.py",
+      "path": "references/pcu-select/scripts/experiments/run_e4.py",
+      "sha256": "de3f313b110df47d256a23105e8db40accf569e6c624803015dee90e82e23f4f"
+    },
+    {
+      "source_path": "src/pcu_select/__init__.py",
+      "path": "references/pcu-select/src/pcu_select/__init__.py",
+      "sha256": "3930a7422ede9b4361243841a842626898c8348e0d630afdf9e0466a9b6cde2b"
+    },
+    {
+      "source_path": "src/pcu_select/baselines/__init__.py",
+      "path": "references/pcu-select/src/pcu_select/baselines/__init__.py",
+      "sha256": "7b354a73f59ab9a6dc61866fd1d01b8a49d25d1bd2b37ed9a7c41793070d97bc"
+    },
+    {
+      "source_path": "src/pcu_select/baselines/selectors.py",
+      "path": "references/pcu-select/src/pcu_select/baselines/selectors.py",
+      "sha256": "c14cb41f59a8e4452a729f3ae481f7cf9422d839bfe2fb79b8a85ad77d6c527f"
+    },
+    {
+      "source_path": "src/pcu_select/cost/__init__.py",
+      "path": "references/pcu-select/src/pcu_select/cost/__init__.py",
+      "sha256": "6081816b4f3f66c504d0962462bef82729a845a84ae08a14c6883a82d104ac82"
+    },
+    {
+      "source_path": "src/pcu_select/cost/accounting.py",
+      "path": "references/pcu-select/src/pcu_select/cost/accounting.py",
+      "sha256": "4bb2e1322c0a7caa124ea972fc33a400f42375f8fac4c19c2c38987eeb321c3b"
+    },
+    {
+      "source_path": "src/pcu_select/data/__init__.py",
+      "path": "references/pcu-select/src/pcu_select/data/__init__.py",
+      "sha256": "d57c8ce7c404b6e267dd0eadd0db4a38e0a27f4f4df3011a191ed7fe91d96f10"
+    },
+    {
+      "source_path": "src/pcu_select/data/dataset.py",
+      "path": "references/pcu-select/src/pcu_select/data/dataset.py",
+      "sha256": "2403ce83035bd79b620088b00cc554b38aa4e8b315da90d8a1a23873dcd100b1"
+    },
+    {
+      "source_path": "src/pcu_select/data/prepare.py",
+      "path": "references/pcu-select/src/pcu_select/data/prepare.py",
+      "sha256": "1e23bb7b2a22b9cd2c43111168e89ba72228823d89eeb9cc4520db54eb04b828"
+    },
+    {
+      "source_path": "src/pcu_select/data/sketch.py",
+      "path": "references/pcu-select/src/pcu_select/data/sketch.py",
+      "sha256": "9414f355f383273d79aff0d3882a80681e690b053261c7c7173902e89db882eb"
+    },
+    {
+      "source_path": "src/pcu_select/eval/__init__.py",
+      "path": "references/pcu-select/src/pcu_select/eval/__init__.py",
+      "sha256": "cffe99aacebf6623da39aa85c7ad59837fba523bddaf6a9836b4954fedb1b9fc"
+    },
+    {
+      "source_path": "src/pcu_select/eval/metrics.py",
+      "path": "references/pcu-select/src/pcu_select/eval/metrics.py",
+      "sha256": "d3308304a9b17dceed858c166a43c053cd841ff26ade2640205c238731386235"
+    },
+    {
+      "source_path": "src/pcu_select/eval/target_train.py",
+      "path": "references/pcu-select/src/pcu_select/eval/target_train.py",
+      "sha256": "847729ee80986142245acf704da31b76b79d0f19cf1f84a5387c9f31dbf24899"
+    },
+    {
+      "source_path": "src/pcu_select/eval/task_metrics.py",
+      "path": "references/pcu-select/src/pcu_select/eval/task_metrics.py",
+      "sha256": "5b061b15df2cf53df19a5f1a4bb50fec62513ef08c9eff5eeb3c86e0d2f1d546"
+    },
+    {
+      "source_path": "src/pcu_select/experiments/__init__.py",
+      "path": "references/pcu-select/src/pcu_select/experiments/__init__.py",
+      "sha256": "88c08a6fd6be170f80ee62f31fe998a478709b15f70bde15366060f01918e771"
+    },
+    {
+      "source_path": "src/pcu_select/experiments/registry.py",
+      "path": "references/pcu-select/src/pcu_select/experiments/registry.py",
+      "sha256": "9778c0d4a9410675b9b25313e6298ee57bc54b02c1e4e0a890b8bdbcec5a9de9"
+    },
+    {
+      "source_path": "src/pcu_select/experiments/results.py",
+      "path": "references/pcu-select/src/pcu_select/experiments/results.py",
+      "sha256": "2b3481acaf94efc955453574645a6c6c7aae2e6d544a8a40f9f04fac268384e1"
+    },
+    {
+      "source_path": "src/pcu_select/features/__init__.py",
+      "path": "references/pcu-select/src/pcu_select/features/__init__.py",
+      "sha256": "3c200f94414cc9c3707cd7150dbfe9d23d972dca304e9ba840abf4659dab14f1"
+    },
+    {
+      "source_path": "src/pcu_select/features/activation_signature.py",
+      "path": "references/pcu-select/src/pcu_select/features/activation_signature.py",
+      "sha256": "20ae841998b11e58c206b52af6d858c5133fbccae7765484adfba9db5d46a7ee"
+    },
+    {
+      "source_path": "src/pcu_select/features/cache.py",
+      "path": "references/pcu-select/src/pcu_select/features/cache.py",
+      "sha256": "a0bf53b81736cc7c7dd290c9e97c696e33db4891a6b8e94b1bd5bec57f266127"
+    },
+    {
+      "source_path": "src/pcu_select/features/difficulty.py",
+      "path": "references/pcu-select/src/pcu_select/features/difficulty.py",
+      "sha256": "89cedaf4628e7d2655fda1c8831cce9a77c1693625e57f2c0ae4c6779703b867"
+    },
+    {
+      "source_path": "src/pcu_select/features/selector_runner.py",
+      "path": "references/pcu-select/src/pcu_select/features/selector_runner.py",
+      "sha256": "5c231517d10919abe18dc3babac6fd8dcc2804bb777fc33f9c98c15b80a4b363"
+    },
+    {
+      "source_path": "src/pcu_select/features/semantic.py",
+      "path": "references/pcu-select/src/pcu_select/features/semantic.py",
+      "sha256": "aed50d337b4121f4b46d69490a7a619cb35e2500f9fa513bc3784344a5eec9a1"
+    },
+    {
+      "source_path": "src/pcu_select/features/stats.py",
+      "path": "references/pcu-select/src/pcu_select/features/stats.py",
+      "sha256": "df96376f08699e1794f56efd5ad09575e84cb3a79529fd9b290b9607b2efd91d"
+    },
+    {
+      "source_path": "src/pcu_select/features/tokenization.py",
+      "path": "references/pcu-select/src/pcu_select/features/tokenization.py",
+      "sha256": "0c984b74a3cb5ea2b2bc302aabd6f1300e03dff24d96d83a8711629c79046972"
+    },
+    {
+      "source_path": "src/pcu_select/hi_fidelity/__init__.py",
+      "path": "references/pcu-select/src/pcu_select/hi_fidelity/__init__.py",
+      "sha256": "91e70b9585fe30e504ebc9d1bc6c9ac7a776f05a52546c092cad32ebb3c76ed1"
+    },
+    {
+      "source_path": "src/pcu_select/hi_fidelity/anchors.py",
+      "path": "references/pcu-select/src/pcu_select/hi_fidelity/anchors.py",
+      "sha256": "a4e75eb83d7fa46e01f55ea0a6ee52bd3f0d6328b42ce819ba9feb233c2e87a5"
+    },
+    {
+      "source_path": "src/pcu_select/hi_fidelity/labeler.py",
+      "path": "references/pcu-select/src/pcu_select/hi_fidelity/labeler.py",
+      "sha256": "381e339f30c514bea1d565acd9f033a7a27e169ccde5940b233135a5c473f0bb"
+    },
+    {
+      "source_path": "src/pcu_select/hi_fidelity/native_peft.py",
+      "path": "references/pcu-select/src/pcu_select/hi_fidelity/native_peft.py",
+      "sha256": "12676cb259beea5ca0a2a16008ad556cb0cdeda6ecba79e80767296d3f1fa37c"
+    },
+    {
+      "source_path": "src/pcu_select/hi_fidelity/sampler.py",
+      "path": "references/pcu-select/src/pcu_select/hi_fidelity/sampler.py",
+      "sha256": "6041a61d3dcd4f7df8c22dcfd47d9bec7b9802b6c7c83b9622334e3ba2d1da0d"
+    },
+    {
+      "source_path": "src/pcu_select/hi_fidelity/short_update.py",
+      "path": "references/pcu-select/src/pcu_select/hi_fidelity/short_update.py",
+      "sha256": "8c3446591ef761d690990a5979ba25d6d411cab5821fb066a55500d3be5c89e7"
+    },
+    {
+      "source_path": "src/pcu_select/ood/__init__.py",
+      "path": "references/pcu-select/src/pcu_select/ood/__init__.py",
+      "sha256": "6040517d25b8ab9d7a6aaadf13b5dbd2a4ffe209eeb4beb8dcc258c1e25e5dc7"
+    },
+    {
+      "source_path": "src/pcu_select/ood/calibration.py",
+      "path": "references/pcu-select/src/pcu_select/ood/calibration.py",
+      "sha256": "eb03a5b923a94406ffe976982e27b335e9da153e1eb942efc529d4f41c8e269b"
+    },
+    {
+      "source_path": "src/pcu_select/peft_space/__init__.py",
+      "path": "references/pcu-select/src/pcu_select/peft_space/__init__.py",
+      "sha256": "4a521933a09c555c74e098bb28ecb72ca0eeabd9af4ac6be6598511981808fd4"
+    },
+    {
+      "source_path": "src/pcu_select/peft_space/encoder.py",
+      "path": "references/pcu-select/src/pcu_select/peft_space/encoder.py",
+      "sha256": "730e190d0ed41b0232a13959d79026e981e539c0b7b7e2999fdf557434db6845"
+    },
+    {
+      "source_path": "src/pcu_select/peft_space/schema.py",
+      "path": "references/pcu-select/src/pcu_select/peft_space/schema.py",
+      "sha256": "547d4d1126b7f352a07d0de3c878eb7f732b507545bec4039a30eb1b58b60f1d"
+    },
+    {
+      "source_path": "src/pcu_select/peft_space/site_mask.py",
+      "path": "references/pcu-select/src/pcu_select/peft_space/site_mask.py",
+      "sha256": "dcfbab85dd81ffddb88619d628d9d7113f61b39869417bb54a2d54380c49ce07"
+    },
+    {
+      "source_path": "src/pcu_select/pipeline/__init__.py",
+      "path": "references/pcu-select/src/pcu_select/pipeline/__init__.py",
+      "sha256": "41de6dbeb7a8d5982fd92bc714f8e9de5633d1b5d200ba92863e3961e573a8bf"
+    },
+    {
+      "source_path": "src/pcu_select/pipeline/active.py",
+      "path": "references/pcu-select/src/pcu_select/pipeline/active.py",
+      "sha256": "0251beaaf28519e44d63c4130fc066df29f78327f12af2fac517762007e3a07a"
+    },
+    {
+      "source_path": "src/pcu_select/pipeline/apply.py",
+      "path": "references/pcu-select/src/pcu_select/pipeline/apply.py",
+      "sha256": "6f40fb329c15ebf15d60b2a1876504c246401ba75077d07b13408185a93f890d"
+    },
+    {
+      "source_path": "src/pcu_select/pipeline/offline.py",
+      "path": "references/pcu-select/src/pcu_select/pipeline/offline.py",
+      "sha256": "28da0b837603526e50c4815a6c3061cabebb5cd0caada7ff3d9c84062e5b7409"
+    },
+    {
+      "source_path": "src/pcu_select/proxy/__init__.py",
+      "path": "references/pcu-select/src/pcu_select/proxy/__init__.py",
+      "sha256": "fbf94850807c48caf5cff04621f21b6e22f3298f4214d545c21b381bc2d45209"
+    },
+    {
+      "source_path": "src/pcu_select/proxy/hooks.py",
+      "path": "references/pcu-select/src/pcu_select/proxy/hooks.py",
+      "sha256": "38a1a49c6693ce5f3761f9f9d51bca7f0f86e4844a28d3235cd133db85bba4d1"
+    },
+    {
+      "source_path": "src/pcu_select/proxy/lo_fidelity.py",
+      "path": "references/pcu-select/src/pcu_select/proxy/lo_fidelity.py",
+      "sha256": "f76c19d36b57562c5731cd6581cb93e827e5d9d072342a6a181706c648459c30"
+    },
+    {
+      "source_path": "src/pcu_select/proxy/projection.py",
+      "path": "references/pcu-select/src/pcu_select/proxy/projection.py",
+      "sha256": "007b4e2f59bb9f25437c5b51647e78ded19fc569babd1f789d8175b9d6a4a415"
+    },
+    {
+      "source_path": "src/pcu_select/scorer/__init__.py",
+      "path": "references/pcu-select/src/pcu_select/scorer/__init__.py",
+      "sha256": "7cb0ec1b9dcf02ec85d657b55fcf33e85632ce68f8f0a354b2cb59f05d5d597f"
+    },
+    {
+      "source_path": "src/pcu_select/scorer/inference.py",
+      "path": "references/pcu-select/src/pcu_select/scorer/inference.py",
+      "sha256": "c660ce32c6a2fed66e374f198398df84c2be1d1fd656c53be21e4299dfdb52b3"
+    },
+    {
+      "source_path": "src/pcu_select/scorer/losses.py",
+      "path": "references/pcu-select/src/pcu_select/scorer/losses.py",
+      "sha256": "5c4a1f2d9e485067043d2b4689dc0efce89ccfa433b577a9f58360440fe151e4"
+    },
+    {
+      "source_path": "src/pcu_select/scorer/model.py",
+      "path": "references/pcu-select/src/pcu_select/scorer/model.py",
+      "sha256": "eebb9c3b27c4eeac2f7e8ef45fb19b6ac89f64768c0eab9292f6ee93bece6965"
+    },
+    {
+      "source_path": "src/pcu_select/scorer/trainer.py",
+      "path": "references/pcu-select/src/pcu_select/scorer/trainer.py",
+      "sha256": "2d40ec0415d32a88d74763a61e81e303d0fdfdda5dc3ebb101aa8d9699297d2c"
+    },
+    {
+      "source_path": "src/pcu_select/selection/__init__.py",
+      "path": "references/pcu-select/src/pcu_select/selection/__init__.py",
+      "sha256": "5cfe23d821639c5bade216f5a1b0a8e644fedb5a0501df1779bbab816ce51487"
+    },
+    {
+      "source_path": "src/pcu_select/selection/adaptive_quota.py",
+      "path": "references/pcu-select/src/pcu_select/selection/adaptive_quota.py",
+      "sha256": "e7cc8620640a8bceb5e6564034ae7bd0529d41615e4edf15426cd1a62b27a592"
+    },
+    {
+      "source_path": "src/pcu_select/selection/cluster.py",
+      "path": "references/pcu-select/src/pcu_select/selection/cluster.py",
+      "sha256": "5f138b4de3728b2d7e6d0680516965df7a1c3f51fa5f78a68c4d89328c415c28"
+    },
+    {
+      "source_path": "src/pcu_select/selection/selector.py",
+      "path": "references/pcu-select/src/pcu_select/selection/selector.py",
+      "sha256": "3374751031458aa8e50dfeadabb8220773d88876d7cef8e7442d3d6570d2de36"
+    },
+    {
+      "source_path": "src/pcu_select/task_cond/__init__.py",
+      "path": "references/pcu-select/src/pcu_select/task_cond/__init__.py",
+      "sha256": "1f66dad925402daf1feb88be682dafd5cc79097465d5c76720320005d8891472"
+    },
+    {
+      "source_path": "src/pcu_select/task_cond/encoder.py",
+      "path": "references/pcu-select/src/pcu_select/task_cond/encoder.py",
+      "sha256": "5f1b1de808ff203746729103eb1a261ea6dd409fcc0f5a7e9ddd5c78d606ed61"
+    },
+    {
+      "source_path": "src/pcu_select/types.py",
+      "path": "references/pcu-select/src/pcu_select/types.py",
+      "sha256": "ead506c6c78904e3c7c0b0486b734e622fc0be15e17f87d5f0f4b33e86092171"
+    },
+    {
+      "source_path": "src/pcu_select/utils/__init__.py",
+      "path": "references/pcu-select/src/pcu_select/utils/__init__.py",
+      "sha256": "0d2f4d1c8449cdcbdd85bc433cafa0949f05079c03108e0b2a2c3b9c2945bb6b"
+    },
+    {
+      "source_path": "src/pcu_select/utils/logging.py",
+      "path": "references/pcu-select/src/pcu_select/utils/logging.py",
+      "sha256": "f8f6f2338ad15bd6d0e317d4826dbf7afe9a1454eada9458bda9255b2fcd491b"
+    },
+    {
+      "source_path": "src/pcu_select/utils/seeding.py",
+      "path": "references/pcu-select/src/pcu_select/utils/seeding.py",
+      "sha256": "603962edb0fae07689d97bd885e402e6d5dbc3c4b8a4ed55c2e1c3a7f30d0532"
+    }
+  ],
+  "runtime_vendor": [
+    {
+      "path": "src/peft_reuse/_reference/adaptive_quota.py",
+      "source_path": "src/pcu_select/selection/adaptive_quota.py",
+      "sha256": "e7cc8620640a8bceb5e6564034ae7bd0529d41615e4edf15426cd1a62b27a592"
+    }
+  ],
+  "research_plan": {
+    "original_sha256": "a8c0343f4101ad8f3d3703bf106b2306361025bb49274a00e3737c28dc57cf52",
+    "change": "Rewrite local links to self-contained reference snapshot; add implementation status note."
+  }
+}

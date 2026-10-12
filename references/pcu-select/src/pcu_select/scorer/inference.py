@@ -1,0 +1,78 @@
+"""Batch scoring for deployment. See design doc §11.1, §15."""
+
+from __future__ import annotations
+
+import json
+from dataclasses import asdict, dataclass, fields
+from pathlib import Path
+from typing import Iterator
+
+import numpy as np
+import torch
+
+from pcu_select.scorer.model import PCUScorer, ScorerConfig
+
+SCORER_CONFIG_FILENAME = "scorer_config.json"
+
+
+def save_scorer_config(cfg: ScorerConfig, ckpt_dir: Path | str) -> Path:
+    """Persist the scorer tower dimensions next to its checkpoint."""
+    path = Path(ckpt_dir) / SCORER_CONFIG_FILENAME
+    path.write_text(json.dumps(asdict(cfg)))
+    return path
+
+
+def load_scorer_config(ckpt: Path | str) -> ScorerConfig | None:
+    """Load the ScorerConfig saved beside `ckpt`, if present."""
+    path = Path(ckpt).parent / SCORER_CONFIG_FILENAME
+    if not path.exists():
+        return None
+    raw = json.loads(path.read_text())
+    valid = {f.name for f in fields(ScorerConfig)}
+    return ScorerConfig(**{k: v for k, v in raw.items() if k in valid})
+
+
+@dataclass
+class InferenceConfig:
+    batch_size: int = 4096
+    device: str = "cuda"
+    bf16: bool = True
+
+
+class ScorerInference:
+    def __init__(self, ckpt: Path | str, model_cfg: ScorerConfig | None = None,
+                 cfg: InferenceConfig | None = None):
+        self.cfg = cfg or InferenceConfig()
+        # Prefer the config persisted alongside the checkpoint so the tower
+        # dimensions match the trained weights (they are inferred at train time).
+        if model_cfg is None:
+            model_cfg = load_scorer_config(ckpt)
+        self.model = PCUScorer(model_cfg)
+        state = torch.load(ckpt, map_location="cpu")
+        self.model.load_state_dict(state)
+        self.device = torch.device(self.cfg.device if torch.cuda.is_available() else "cpu")
+        self.model.to(self.device).eval()
+        if self.cfg.bf16 and self.device.type == "cuda":
+            self.model = self.model.to(dtype=torch.bfloat16)
+
+    @torch.no_grad()
+    def score(self, z_x: np.ndarray, z_p: np.ndarray, z_t: np.ndarray
+              ) -> tuple[np.ndarray, np.ndarray]:
+        """z_x: (N, d_x). z_p / z_t may be (1, d) or (N, d)."""
+        n = z_x.shape[0]
+        mus = np.empty(n, dtype=np.float32)
+        sigmas = np.empty(n, dtype=np.float32)
+        model_dtype = next(self.model.parameters()).dtype
+        zp_t = torch.as_tensor(z_p, device=self.device, dtype=model_dtype)
+        zt_t = torch.as_tensor(z_t, device=self.device, dtype=model_dtype)
+        for s, e in self._batches(n):
+            zx_t = torch.as_tensor(z_x[s:e], device=self.device, dtype=model_dtype)
+            mu, sigma = self.model(zx_t, zp_t if len(zp_t) == 1 else zp_t[s:e],
+                                   zt_t if len(zt_t) == 1 else zt_t[s:e])
+            mus[s:e] = mu.float().cpu().numpy()
+            sigmas[s:e] = sigma.float().cpu().numpy()
+        return mus, sigmas
+
+    def _batches(self, n: int) -> Iterator[tuple[int, int]]:
+        for s in range(0, n, self.cfg.batch_size):
+            yield s, min(n, s + self.cfg.batch_size)

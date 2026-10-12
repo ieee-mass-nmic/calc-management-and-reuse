@@ -1,0 +1,33 @@
+\section{Problem Formulation}
+\label{sec:problem}
+
+We study \emph{cross-PEFT data-efficient fine-tuning}: selecting a small training subset for a target task and PEFT configuration while reusing selection work across configurations. We fix a backbone family and a frozen base model $M_0$. The candidate pool $\mathcal{D}=\{x_i\}_{i=1}^{N}$ contains $N$ instruction--response examples. Each task $t$ provides a \emph{task sketch} $V_t$, a small set from its training or development data. Each PEFT configuration $p\in\mathcal{P}$ specifies a method, trainable locations, capacity, and training recipe. For a selection budget $B$, the ideal subset maximizes held-out task performance:
+\begin{equation}
+  \mathcal{S}^{*}=\arg\max_{\mathcal{S}\subseteq\mathcal{D},\,|\mathcal{S}|\le B}
+  \mathrm{Perf}\!\left(\mathrm{Tune}(M_0,p,\mathcal{S}),V_t^{\mathrm{test}}\right).
+  \label{eq:selection-objective}
+\end{equation}
+Here $\mathrm{Tune}$ adapts $M_0$ with configuration $p$ and subset $\mathcal{S}$, and $\mathrm{Perf}$ evaluates the adapted model. The held-out test set $V_t^{\mathrm{test}}$ defines this ideal objective but never enters training, scoring, or selection; those procedures use only $V_t$. Directly solving Eq.~\eqref{eq:selection-objective} would require training and evaluating many subsets for every target $(p,t)$ pair.
+
+PCU-Select avoids this search by assigning each example a conditional utility: its benefit for task $t$ when training uses configuration $p$. Its mean prediction approximates this utility:
+\begin{equation}
+  \widehat{\mu}_{\phi}(x,p,t)\approx u(x,p,t).
+  \label{eq:surrogate}
+\end{equation}
+The target $u(x,p,t)\in[0,1]$ summarizes task-sketch loss reductions after a few PEFT update steps. PCU-Select rank-normalizes these reductions within groups that share the same PEFT, task, and measurement setting (see ``Method: PCU-Select''). Including $p$ allows the ranking to change with the trainable subspace; omitting $p$ would force every configuration to share one task-specific ranking. The task sketch $V_t$ identifies the desired task behavior, while $p$ identifies the updates available to the model. Utility is therefore relative to both the task and the PEFT configuration.
+
+\paragraph{Amortization objective.}
+A registry changes the cost objective because it serves multiple PEFT configurations and tasks from one candidate pool. Let $P$ be the number of target configurations and $Q$ the number of task sketches. LESS builds one gradient datastore for each configuration and ranks that datastore once for each task. PCU-Select instead pays one shared offline cost, followed by one scoring-and-selection pass for every PEFT--task pair:
+\begin{equation}
+  \begin{aligned}
+  C_{\mathrm{LESS}}(P,Q)
+    &=P C^{\mathrm{data}}_{\mathrm{LESS}}+
+      PQ C^{\mathrm{rank}}_{\mathrm{LESS}},\\
+  C_{\mathrm{PCU}}(P,Q)
+    &=C_{\mathrm{offline}}+PQ C^{\mathrm{pair}}_{\mathrm{PCU}}.
+  \end{aligned}
+  \label{eq:cost}
+\end{equation}
+Equation~\eqref{eq:cost} separates four costs. $C^{\mathrm{data}}_{\mathrm{LESS}}$ builds one PEFT-specific datastore, and $C^{\mathrm{rank}}_{\mathrm{LESS}}$ ranks it for one task. $C_{\mathrm{offline}}$ extracts reusable signals and trains PCU-Select once. $C^{\mathrm{pair}}_{\mathrm{PCU}}$ scores and selects data for one target pair. LESS builds $P$ datastores and performs $PQ$ rankings, whereas PCU-Select pays the offline cost once. The onboarding-cost experiment measures each cost term.
+
+The objective is to retain per-PEFT LESS quality while replacing repeated datastore construction with shared offline work. Solving the two cost equations gives a break-even registry size; the onboarding-cost experiment substitutes the measured costs.

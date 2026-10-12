@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "pool": [
+    {
+      "id": "sample-00",
+      "text": "Synthetic instruction 0: explain topic 0."
+    },
+    {
+      "id": "sample-01",
+      "text": "Synthetic instruction 1: explain topic 1."
+    },
+    {
+      "id": "sample-02",
+      "text": "Synthetic instruction 2: explain topic 2."
+    },
+    {
+      "id": "sample-03",
+      "text": "Synthetic instruction 3: explain topic 3."
+    },
+    {
+      "id": "sample-04",
+      "text": "Synthetic instruction 4: explain topic 4."
+    },
+    {
+      "id": "sample-05",
+      "text": "Synthetic instruction 5: explain topic 0."
+    },
+    {
+      "id": "sample-06",
+      "text": "Synthetic instruction 6: explain topic 1."
+    },
+    {
+      "id": "sample-07",
+      "text": "Synthetic instruction 7: explain topic 2."
+    },
+    {
+      "id": "sample-08",
+      "text": "Synthetic instruction 8: explain topic 3."
+    },
+    {
+      "id": "sample-09",
+      "text": "Synthetic instruction 9: explain topic 4."
+    },
+    {
+      "id": "sample-10",
+      "text": "Synthetic instruction 10: explain topic 0."
+    },
+    {
+      "id": "sample-11",
+      "text": "Synthetic instruction 11: explain topic 1."
+    },
+    {
+      "id": "sample-12",
+      "text": "Synthetic instruction 12: explain topic 2."
+    },
+    {
+      "id": "sample-13",
+      "text": "Synthetic instruction 13: explain topic 3."
+    },
+    {
+      "id": "sample-14",
+      "text": "Synthetic instruction 14: explain topic 4."
+    },
+    {
+      "id": "sample-15",
+      "text": "Synthetic instruction 15: explain topic 0."
+    }
+  ],
+  "defaults": {
+    "model": {
+      "name": "synthetic-scorer",
+      "revision": "demo-v1"
+    },
+    "execution": {
+      "dtype": "float64",
+      "batch_size": 4,
+      "seed": 0
+    },
+    "selection": {
+      "lambda": 0.2,
+      "clusters": 3,
+      "cluster_seed": 0,
+      "top_pct": 0.5,
+      "alpha": 0.6,
+      "min_cluster_size": 0
+    }
+  },
+  "requests": [
+    {
+      "id": "lora-r4-reasoning-b3",
+      "peft": {
+        "family": "lora",
+        "rank": 4,
+        "targets": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "task": {
+        "name": "reasoning",
+        "sketch": [
+          "Synthetic reasoning example"
+        ]
+      },
+      "budget": {
+        "count": 3
+      }
+    },
+    {
+      "id": "lora-r4-reasoning-b6",
+      "peft": {
+        "family": "lora",
+        "rank": 4,
+        "targets": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "task": {
+        "name": "reasoning",
+        "sketch": [
+          "Synthetic reasoning example"
+        ]
+      },
+      "budget": {
+        "count": 6
+      }
+    },
+    {
+      "id": "lora-r4-reasoning-b12",
+      "peft": {
+        "family": "lora",
+        "rank": 4,
+        "targets": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "task": {
+        "name": "reasoning",
+        "sketch": [
+          "Synthetic reasoning example"
+        ]
+      },
+      "budget": {
+        "count": 12
+      }
+    },
+    {
+      "id": "lora-r4-summarization-b3",
+      "peft": {
+        "family": "lora",
+        "rank": 4,
+        "targets": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "task": {
+        "name": "summarization",
+        "sketch": [
+          "Synthetic summarization example"
+        ]
+      },
+      "budget": {
+        "count": 3
+      }
+    },
+    {
+      "id": "lora-r4-summarization-b6",
+      "peft": {
+        "family": "lora",
+        "rank": 4,
+        "targets": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "task": {
+        "name": "summarization",
+        "sketch": [
+          "Synthetic summarization example"
+        ]
+      },
+      "budget": {
+        "count": 6
+      }
+    },
+    {
+      "id": "lora-r4-summarization-b12",
+      "peft": {
+        "family": "lora",
+        "rank": 4,
+        "targets": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "task": {
+        "name": "summarization",
+        "sketch": [
+          "Synthetic summarization example"
+        ]
+      },
+      "budget": {
+        "count": 12
+      }
+    },
+    {
+      "id": "lora-r8-reasoning-b3",
+      "peft": {
+        "family": "lora",
+        "rank": 8,
+        "targets": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "task": {
+        "name": "reasoning",
+        "sketch": [
+          "Synthetic reasoning example"
+        ]
+      },
+      "budget": {
+        "count": 3
+      }
+    },
+    {
+      "id": "lora-r8-reasoning-b6",
+      "peft": {
+        "family": "lora",
+        "rank": 8,
+        "targets": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "task": {
+        "name": "reasoning",
+        "sketch": [
+          "Synthetic reasoning example"
+        ]
+      },
+      "budget": {
+        "count": 6
+      }
+    },
+    {
+      "id": "lora-r8-reasoning-b12",
+      "peft": {
+        "family": "lora",
+        "rank": 8,
+        "targets": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "task": {
+        "name": "reasoning",
+        "sketch": [
+          "Synthetic reasoning example"
+        ]
+      },
+      "budget": {
+        "count": 12
+      }
+    },
+    {
+      "id": "lora-r8-summarization-b3",
+      "peft": {
+        "family": "lora",
+        "rank": 8,
+        "targets": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "task": {
+        "name": "summarization",
+        "sketch": [
+          "Synthetic summarization example"
+        ]
+      },
+      "budget": {
+        "count": 3
+      }
+    },
+    {
+      "id": "lora-r8-summarization-b6",
+      "peft": {
+        "family": "lora",
+        "rank": 8,
+        "targets": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "task": {
+        "name": "summarization",
+        "sketch": [
+          "Synthetic summarization example"
+        ]
+      },
+      "budget": {
+        "count": 6
+      }
+    },
+    {
+      "id": "lora-r8-summarization-b12",
+      "peft": {
+        "family": "lora",
+        "rank": 8,
+        "targets": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "task": {
+        "name": "summarization",
+        "sketch": [
+          "Synthetic summarization example"
+        ]
+      },
+      "budget": {
+        "count": 12
+      }
+    }
+  ]
+}
